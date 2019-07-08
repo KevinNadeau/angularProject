@@ -1,0 +1,10 @@
+<p>
+    kevin works! Le resultat de 10 + 15 est {{ addition }}
+</p>
+<p>les résultat de {{x}}*{{y}} est {{ multi() }}</p>
+
+<button [disabled]="!isLoggedIn">Mon boutton </button>
+<button (click)="login()">Connection en tant que {{ monNom }} </button>
+<br/>
+<!-- property binding banana in the box [()]-->*/
+<input type="text" [(ngModel)]="monNom">
