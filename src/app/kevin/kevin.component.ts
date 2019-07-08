@@ -15,7 +15,6 @@ export class KevinComponent implements OnInit {
   constructor() {
     this.x = 7;
     this.y = 3;
-
   }
 
   ngOnInit() {
