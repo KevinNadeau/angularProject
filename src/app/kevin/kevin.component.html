@@ -9,5 +9,26 @@
 <button (click)="login()">Connection en tant que {{ monNom }} </button>
 
 <br/>
+<p>{{ monNom }} s'est connecté à {{ connexionDate }} </p>
+<br/>
+<ul *ngIf="isLogedIn; else notConnected">
+    <li>Typescript</li>
+    <li>Angular</li>
+    <li>Javascript ES6</li>
+    <li>Ionic</li>
+</ul>
+<ng-template #notConnected>
+    <p>Vous devez vous connecter pour voir le contenu</p>
+</ng-template>
+
 <!-- property binding banana in the box [()]-->
 <input type="text" [(ngModel)]="monNom">
+
+<p [ngClass]="{
+    'color-red' : isLogedIn === false,
+    'color-green' : isLogedIn === true
+   }"> Voici la suite: </p>
+
+<ul *ngFor="let list of myList">
+    <li>Nom : {{ list.nom | uppercase }} -- disponible: {{ list.disponible }} </li>
+</ul>
